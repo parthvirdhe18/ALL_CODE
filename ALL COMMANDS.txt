@@ -1,0 +1,486 @@
+//Angular
+
+npm --version
+npm install -g @angular/cli@latest
+ng new part-c
+HTML TS
+cd part-c
+ng serve
+link
+
+code:
+<input type="text" #address placeholder="Enter Your address" name="Address"> <br>
+
+<input type="text" #contact placeholder="Enter Your Contact" name="Contact"> <br>
+
+<input type="email" #email placeholder="Enter Your email" name="Email ID"> <br>
+
+<input type="password" #password placeholder="Enter Your Password" name="Password"> <br>
+
+
+<button (click)="getValue(name.value,address.value,contact.value,email.value)">Register</button> <br>
+
+<h1>Registration Form</h1> <br>
+
+<p>Name:{{displayname}}</p> <br>
+<p>Address:{{displayaddress}}</p> <br>
+<p>Contact:{{displaycontact}}</p> <br>
+<p>Email:{{displayemail}}</p>
+
+
+
+
+
+{
+title='Registration Form';
+
+displayname='';
+displayaddress='';
+displaycontact='';
+displayemail='';
+
+getValue(name:string,address:string,contact:string, email:string){
+    this.displayname=name;
+    this.displayaddress=address;
+    this.displaycontact=contact;
+    this.displayemail=email;
+    
+}
+
+}
+
+---------------------------------------------------------------------------
+
+
+//STATIC
+
+npm --version
+npm init
+npm install express
+index.js
+content -7
+node index.js => RUN 
+
+
+code:
+const express=require('express')
+const app=express()
+
+app.listen(8080,()=>{
+    console.log("Your Website is running")
+})
+
+app.get("/",(req,res)=>{
+    // res.send("<h2>The website is static</h2>")
+    res.sendFile(__dirname +"/index.html")
+})
+
+-----------------------------------------------------------------------------
+//DOCKER
+Dockerfile
+FROM node:alpine
+COPY . /partb
+CMD node /partb/index.js
+
+terminal
+docker --version
+docker bulid -t index.js .
+docker images
+
+------------------------------------------------------------------------------
+
+//GITHUB
+git --version
+git init
+git add .
+git remote add origin "Your repo"
+git status
+git commit -m "First Commit"
+git push -u origin master
+git status
+
+git config --global user.name ""
+git config --global user.email ""
+
+----------------------------------------------------------------------------------
+//CC-1
+
+import webapp2
+
+class MainPage(webapp2.RequestHandler):
+    def get(self):
+        self.response.write("Hello World")
+
+app= webapp2.WSGIApplication([('/', MainPage)], debug=True)
+
+
+
+
+runtime: python27
+api_version:1
+threadsafe: false
+
+handlers:
+- url: /
+script : test.app
+-------------------------------------------------------------------------------------------
+
+//jquery
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Yogesh Arts </title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" data-theme="b">
+            <h1> Yogesh Arts </h1>
+        </div>
+
+        <div data-role="navbar" data-grid="c">
+            <ul>
+                <li> <a href="index.html" class="ui-btn-active"> Home </a></li>
+                <li> <a href="about_us.html"> About Us </a></li>
+                <li> <a href="products.html"> Products </a></li>
+                <li> <a href="login_register.html"> Login/Register </a></li>
+            </ul>
+        </div>
+
+        <center> <h3> Products </h3> </center>
+
+        <div class="content">
+            <center>
+            <div class="rows">
+                <div>
+                    <img src="Penguins.jpg" height="250px" width="250px">
+                    <img src="Penguins.jpg" height="250px" width="250px">
+                    <img src="Penguins.jpg" height="250px" width="250px">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="rows">
+                <div>
+                    <img src="Penguins.jpg" height="250px" width="250px">
+                    <img src="Penguins.jpg" height="250px" width="250px">
+                    <img src="Penguins.jpg" height="250px" width="250px">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="rows">
+                <div>
+                    <img src="Penguins.jpg" height="250px" width="250px">
+                    <img src="Penguins.jpg" height="250px" width="250px">
+                    <img src="Penguins.jpg" height="250px" width="250px">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="rows">
+                <div>
+                    <img src="Penguins.jpg" height="250px" width="250px">
+                    <img src="Penguins.jpg" height="250px" width="250px">
+                    <img src="Penguins.jpg" height="250px" width="250px">
+                </div>
+            </div>
+
+            <br>
+            </center>
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <center>
+            <div class="quicklinks">
+                <h3> Quick Links </h3>
+                <a href="index.html"> Home </a> <br> <br>
+                <a href="about_us.html"> About Us </a> <br> <br>
+                <a href="products.html"> Products </a> <br> <br>
+                <a href="login_register.html"> Login/Register </a> <br> <br>
+            </div>
+
+            <p> Copyright 2022 | Yogesh Arts, All Rights Reserved. </p>
+        </center>
+
+        </div>
+
+
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login/Register | Yogesh Arts </title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" data-theme="b">
+            <h1> Yogesh Arts </h1>
+        </div>
+
+        <div data-role="navbar" data-grid="c">
+            <ul>
+                <li> <a href="index.html"> Home </a></li>
+                <li> <a href="about_us.html"> About Us </a></li>
+                <li> <a href="products.html"> Products </a></li>
+                <li> <a href="login_register.html" class="ui-btn-active"> Login/Register </a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div>
+                <center> <h2> Register </h2></center>
+            </div>
+            <div data-role="content">
+                <label> Full Name: </label>
+                <input type="text"> <br>
+
+                <label> Address: </label>
+                <textarea cols="25" rows="7" > </textarea> <br>
+
+                <label> Pincode: </label>
+                <input type="text"> <br>
+
+                <label> Date of Birth: </label>
+                <input type="date"> <br>
+
+                <label> Email-ID: </label>
+                <input type="email"> <br>
+
+                <label> Password: </label>
+                <input type="password"> <br>
+
+                <label> Confirm Password: </label>
+                <input type="password"> <br>
+
+                <input type="submit" value="Register"> <br>
+
+               <center> <a href="login.html"> Already Registered? Login </a> </center>
+            </div>
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <center>
+            <div class="quicklinks">
+                <h3> Quick Links </h3>
+                <a href="index.html"> Home </a> <br> <br>
+                <a href="about_us.html"> About Us </a> <br> <br>
+                <a href="products.html"> Products </a> <br> <br>
+                <a href="login_register.html"> Login/Register </a> <br> <br>
+            </div>
+
+            <p> Copyright 2022 | Yogesh Arts, All Rights Reserved. </p>
+        </center>
+
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login/Register | Yogesh Arts </title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" data-theme="b">
+            <h1> Yogesh Arts </h1>
+        </div>
+
+        <div data-role="navbar" data-grid="c">
+            <ul>
+                <li> <a href="index.html"> Home </a></li>
+                <li> <a href="about_us.html"> About Us </a></li>
+                <li> <a href="products.html"> Products </a></li>
+                <li> <a href="login_register.html" class="ui-btn-active"> Login/Register </a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div>
+                <center> <h2> Login </h2></center>
+            </div>
+            <div data-role="content">
+                <label> Email-ID: </label>
+                <input type="email"> <br>
+
+                <label> Password: </label>
+                <input type="password"> <br>
+
+                <input type="submit" value="Login"> <br>
+
+               <center> <a href="login_register.html"> Don't Have Account? Register </a> </center>
+            </div>
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <center>
+            <div class="quicklinks">
+                <h3> Quick Links </h3>
+                <a href="index.html"> Home </a> <br> <br>
+                <a href="about_us.html"> About Us </a> <br> <br>
+                <a href="products.html"> Products </a> <br> <br>
+                <a href="login_register.html"> Login/Register </a> <br> <br>
+            </div>
+
+            <p> Copyright 2022 | Yogesh Arts, All Rights Reserved. </p>
+        </center>
+
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+//AJAX CODE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container py-5" style="max-width: 1000px;">
+        <form id="form" method="post" style="width:100% " class="text-center">
+          <input type="text" id="name" name="name" placeholder="enter name" class="mb-3 " style="width:50%; height: 50px;"><br><br>
+          <input type="text" id="email" name="email" placeholder="enter email" class="mb-3 " style="width:50% ; height: 50px;"><br><br>
+          <input type="password" id="pass" name="pass" placeholder="enter password" class="mb-3 " style="width:50% ; height: 50px;"><br><br>
+          <button type="submit" value="Add Todo">Submit</button>
+
+        </form>
+
+        
+    
+
+    <div>
+        <table id="emp_table" class="table table-striped table-hover mt-5">
+            <tr>
+                <th>name</th>
+                <th>Email</th>
+            </tr>
+            <tbody id="data-out">
+
+            </tbody>
+        </table>
+        
+    </div>
+</div>
+
+    <script>
+           var form = document.getElementById('form');
+
+           form.addEventListener('submit', function(e){
+            //auto submission
+            e.preventDefault() 
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            fetch(" http://localhost:3000/posts", {
+
+                method:'POST',
+                body:JSON.stringify({
+                    name:name,
+                    email:email
+                }),
+                headers:{
+                    "content-Type":"application/json; charset=UTF-8"
+                }
+            }).then(function(response){
+                return response.json()
+            })
+            .then(function(data){
+                console.log(data)
+
+            })
+
+            }
+
+           )
+    </script>
+    <script>
+        fetch("http://localhost:3000/posts")
+
+        .then(function(response){
+            return  response.json();
+        })
+        .then(function(products){
+            let placeholder = document.getElementById('data-out');
+            let out ="";
+            for(let product of products){
+
+                out += `
+                  <tr>
+                    <td>${product.name}</td>
+                    <td>${product.email}</td>
+                    </tr>
+                `;
+            }
+
+            placeholder.innerHTML = out;
+        })
+        
+    </script>
+</body>
+</html>
+
+
+commands:
+npm init
+npm install -g json-server
+json-server --watch db.json
